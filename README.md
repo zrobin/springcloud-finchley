@@ -13,3 +13,4 @@ This project is based on springboot-2.0.0 and springcloud-Finchley.SR2
 * [SpringCloud-Finchley系列07-服务聚合监控turbine搭建](https://blog.csdn.net/wszb2012/article/details/108007654)
 * [SpringCloud-Finchley系列08-服务网关zuul搭建](https://blog.csdn.net/wszb2012/article/details/108007108)
 * [SpringCloud-Finchley系列09-分布式配置中心Spring Cloud Config搭建](https://blog.csdn.net/wszb2012/article/details/108008520)
+* [SpringCloud-Finchley系列10-配置获取Spring Cloud Config搭建](https://blog.csdn.net/wszb2012/article/details/108009654)
