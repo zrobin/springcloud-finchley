@@ -1,0 +1,4 @@
+# env_config
+spring:
+  profiles:
+    active: zuul-dev

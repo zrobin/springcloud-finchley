@@ -1,0 +1,27 @@
+# rabbitmq_config\bus_config
+spring:
+  rabbitmq:
+    host: *.*.*.*
+    port: 5672
+    username: ***
+    password: ***
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+info:
+  company.name: org.flowframework
+  app.name: config-client01
+  app.desc: springcloud-config-client01
+  author: robin

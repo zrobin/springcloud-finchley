@@ -1,0 +1,33 @@
+# dev_config
+spring:
+  application:
+    name: eureka-provider
+
+server:
+  port: 8772
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    service-url:
+      # 单个配置
+#      defaultZone: http://localhost:8761/eureka/
+      # 集群配置
+      defaultZone: http://127.0.0.1:8761/eureka/, http://127.0.0.1:8762/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+info:
+    company.name: org.flowframework
+    app.name: eureka-provider02
+    app.desc: springcloud-eureka-client-provider02
+    author: robin

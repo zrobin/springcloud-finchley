@@ -1,0 +1,43 @@
+# dev_config
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 8731
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    service-url:
+      # 单个配置
+#      defaultZone: http://localhost:8761/eureka/
+      # 集群配置
+      defaultZone: http://127.0.0.1:8761/eureka/, http://127.0.0.1:8762/eureka/
+
+# zuul_config
+zuul:
+  routes:
+    ribbon:
+      path: /ribbon/**
+      serviceId: eureka-consumer-ribbon
+    feign:
+      path: /feign/**
+      serviceId: eureka-consumer-feign
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+info:
+  company.name: org.flowframework
+  app.name: zuul
+  app.desc: springcloud-zuul
+  author: robin

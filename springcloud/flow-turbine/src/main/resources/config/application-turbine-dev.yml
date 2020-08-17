@@ -1,0 +1,41 @@
+# dev_config
+spring:
+  application:
+    name: turbine
+
+server:
+  port: 8791
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    service-url:
+      # 单个配置
+#      defaultZone: http://localhost:8761/eureka/
+      # 集群配置
+      defaultZone: http://127.0.0.1:8761/eureka/, http://127.0.0.1:8762/eureka/
+
+# turbine_config
+turbine:
+  app-config: eureka-consumer-ribbon, eureka-consumer-feign
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+info:
+  company.name: org.flowframework
+  app.name: turbine
+  app.desc: springcloud-turbine
+  author: robin
